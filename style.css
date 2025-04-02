@@ -13,6 +13,16 @@ body {
     color: #6C6C6C;
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #6C6C6C;
+    font-size: 0.875rem;
+}
+
 .flex {
     display: flex;
 }
@@ -22,9 +32,9 @@ header {
     align-items: center;
     justify-content: space-between;
     background: #F5F5F5;
-    width: 360px;
+    width: 100%;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 1280px;
     padding: 1.25rem 1rem;
 }
 
@@ -73,9 +83,13 @@ header {
     object-fit: cover;
 }
 
+.nav-links {
+    display: none;
+}
+
 .profile-card {
     width: 100%;
-    max-width: 360px;
+    max-width: 1280px;
     margin: 0 auto;
     background: #F5F5F5;
     padding: 1.25rem 2rem;
@@ -98,7 +112,6 @@ header {
 
 .profile-info {
     margin-top: 2rem;
-    list-style: none;
 }
 
 .profile-info li{
@@ -118,7 +131,7 @@ header {
     grid-template-columns: 1fr;  /* Começa com uma única coluna no mobile */
     gap: 1rem;
     padding: 1rem;
-    width: 360px;
+    width: auto;
     margin: 0 auto;
     max-width: 100%;
     padding: 1.25rem 1rem;
@@ -144,9 +157,48 @@ footer nav {
     gap: 1rem;
 }
 
-footer a {
-    text-decoration: none;
-    color: #6C6C6C;
+/* Para telas maiores que 480px */
+@media (min-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+    }
+    .search-form {
+        gap: 1rem;
+    }
+    .nav-links {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+/* Para telas maiores que 768px */
+@media (min-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* Três colunas */
+    }
+    .profile-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .profile-description {
+        display: flex;
+        align-items: center;
+        max-width: 592px;
+        max-height: 176px;
+        gap: 2rem;
+    }
+    .profile-info {
+        width: 280px;
+        height: 104px;
+    }
+}
+
+/* Para telas maiores que 1024px */
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr); /* Quatro colunas */
+    }
 }
 
 
